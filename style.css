@@ -1172,4 +1172,19 @@ ul {
 
 .service-card p {
     line-height: 1.7;
+} 
+
+
+
+/* ================= CONTACT BUTTONS ================= */
+
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-buttons .btn {
+    text-decoration: none;
 }
