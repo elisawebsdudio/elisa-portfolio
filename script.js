@@ -7,26 +7,36 @@ const navLinks = document.getElementById("navLinks");
 
 if (menuBtn && navLinks) {
 
-    menuBtn.addEventListener("click", function () {
+    menuBtn.addEventListener("click", function (event) {
+
+        event.stopPropagation();
 
         navLinks.classList.toggle("active");
 
-        const isOpen =
-            navLinks.classList.contains("active");
+        if (navLinks.classList.contains("active")) {
 
-        menuBtn.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        } else {
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
 
     });
 
 
-    const links =
+    const navItems =
         navLinks.querySelectorAll("a");
 
 
-    links.forEach(function (link) {
+    navItems.forEach(function (link) {
 
         link.addEventListener("click", function () {
 
@@ -51,14 +61,12 @@ if (menuBtn && navLinks) {
 const typingText =
     document.querySelector(".typing-text");
 
-
 const words = [
     "Web Developer",
     "Website Designer",
     "Creative Coder",
     "Digital Creator"
 ];
-
 
 let wordIndex = 0;
 let characterIndex = 0;
@@ -70,7 +78,6 @@ function typeEffect() {
     if (!typingText) {
         return;
     }
-
 
     const currentWord =
         words[wordIndex];
@@ -100,8 +107,7 @@ function typeEffect() {
 
     if (
         !deleting &&
-        characterIndex ===
-        currentWord.length
+        characterIndex === currentWord.length
     ) {
 
         speed = 1500;
@@ -109,7 +115,6 @@ function typeEffect() {
         deleting = true;
 
     }
-
 
     else if (
         deleting &&
@@ -120,16 +125,9 @@ function typeEffect() {
 
         wordIndex++;
 
-
-        if (
-            wordIndex >=
-            words.length
-        ) {
-
+        if (wordIndex >= words.length) {
             wordIndex = 0;
-
         }
-
 
         speed = 400;
 
@@ -143,7 +141,6 @@ function typeEffect() {
 
 }
 
-
 typeEffect();
 
 
@@ -153,7 +150,6 @@ typeEffect();
 
 const year =
     document.getElementById("year");
-
 
 if (year) {
 
@@ -180,20 +176,14 @@ const animatedElements =
     );
 
 
-animatedElements.forEach(
-    function (element) {
+animatedElements.forEach(function (element) {
 
-        element.classList.add(
-            "scroll-hidden"
-        );
+    element.classList.add(
+        "scroll-hidden"
+    );
 
-    }
-);
+});
 
-
-/* =========================================
-   INTERSECTION OBSERVER
-========================================= */
 
 if ("IntersectionObserver" in window) {
 
@@ -201,44 +191,36 @@ if ("IntersectionObserver" in window) {
         new IntersectionObserver(
             function (entries) {
 
-                entries.forEach(
-                    function (entry) {
+                entries.forEach(function (entry) {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
+                        entry.target.classList.add(
+                            "scroll-show"
+                        );
+
+                        observer.unobserve(
                             entry.target
-                                .classList
-                                .add(
-                                    "scroll-show"
-                                );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
+                        );
 
                     }
-                );
+
+                });
 
             },
             {
-                threshold: 0.15
+                threshold: 0.1
             }
         );
 
 
-    animatedElements.forEach(
-        function (element) {
+    animatedElements.forEach(function (element) {
 
-            observer.observe(
-                element
-            );
+        observer.observe(element);
 
-        }
-    );
+    });
 
 }
 
@@ -251,34 +233,17 @@ document.addEventListener(
     "click",
     function (event) {
 
-        if (
-            !navLinks ||
-            !menuBtn
-        ) {
+        if (!navLinks || !menuBtn) {
             return;
         }
 
 
-        const clickedInsideMenu =
-            navLinks.contains(
-                event.target
-            );
-
-
-        const clickedMenuButton =
-            menuBtn.contains(
-                event.target
-            );
-
-
         if (
-            !clickedInsideMenu &&
-            !clickedMenuButton
+            !navLinks.contains(event.target) &&
+            !menuBtn.contains(event.target)
         ) {
 
-            navLinks.classList.remove(
-                "active"
-            );
+            navLinks.classList.remove("active");
 
             menuBtn.setAttribute(
                 "aria-expanded",
