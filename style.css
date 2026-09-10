@@ -41,10 +41,12 @@ img {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
-    background: rgba(7, 17, 31, 0.96);
+    background: rgba(7, 17, 31, 0.97);
 
     border-bottom:
         1px solid rgba(0, 255, 170, 0.15);
@@ -54,17 +56,26 @@ img {
 
 .navbar {
     max-width: 1150px;
+
     margin: auto;
 
     padding: 18px 25px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
+
+/* =========================================
+   LOGO
+========================================= */
+
 .logo {
     font-size: 24px;
+
     font-weight: bold;
 }
 
@@ -72,14 +83,22 @@ img {
     color: #00ffaa;
 }
 
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
 .nav-links {
     display: flex;
+
     gap: 28px;
 }
 
 .nav-links a {
     color: #dce7f5;
+
     font-size: 15px;
+
     transition: 0.3s;
 }
 
@@ -87,16 +106,25 @@ img {
     color: #00ffaa;
 }
 
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+    display: none;
+}
+
 .menu-btn {
     display: none;
 
-    background: transparent;
-    border: none;
-
     color: white;
+
     font-size: 28px;
 
     cursor: pointer;
+
+    user-select: none;
 }
 
 
@@ -108,12 +136,15 @@ img {
     min-height: 100vh;
 
     max-width: 1150px;
+
     margin: auto;
 
     padding: 140px 25px 80px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 50px;
@@ -125,6 +156,7 @@ img {
 
 .hero-status {
     display: inline-flex;
+
     align-items: center;
 
     gap: 9px;
@@ -144,11 +176,13 @@ img {
     color: #00ffaa;
 
     font-size: 13px;
+
     font-weight: bold;
 }
 
 .status-dot {
     width: 8px;
+
     height: 8px;
 
     border-radius: 50%;
@@ -182,13 +216,17 @@ img {
 
 .welcome {
     color: #00ffaa;
+
     font-weight: bold;
+
     margin-bottom: 15px;
 }
 
 .hero h1 {
     font-size: 52px;
+
     line-height: 1.15;
+
     margin-bottom: 15px;
 }
 
@@ -198,6 +236,7 @@ img {
 
 .hero h2 {
     font-size: 27px;
+
     margin-bottom: 20px;
 }
 
@@ -217,7 +256,9 @@ img {
 
 .hero-buttons {
     display: flex;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
@@ -240,6 +281,7 @@ img {
 
 .primary-btn {
     background: #00ffaa;
+
     color: #06131d;
 }
 
@@ -251,12 +293,15 @@ img {
 }
 
 .secondary-btn {
-    border: 1px solid #00ffaa;
+    border:
+        1px solid #00ffaa;
+
     color: #00ffaa;
 }
 
 .secondary-btn:hover {
     background: #00ffaa;
+
     color: #06131d;
 }
 
@@ -275,16 +320,19 @@ img {
 
 .hero-highlights div {
     display: flex;
+
     flex-direction: column;
 }
 
 .hero-highlights strong {
     color: #00ffaa;
+
     font-size: 20px;
 }
 
 .hero-highlights span {
     color: #8fa2b7;
+
     font-size: 12px;
 }
 
@@ -297,15 +345,19 @@ img {
     position: relative;
 
     width: 330px;
+
     min-width: 330px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .image-circle {
     width: 220px;
+
     height: 220px;
 
     padding: 5px;
@@ -325,6 +377,7 @@ img {
 
 .image-circle img {
     width: 100%;
+
     height: 100%;
 
     display: block;
@@ -332,6 +385,7 @@ img {
     border-radius: 50%;
 
     object-fit: cover;
+
     object-position: center;
 }
 
@@ -379,11 +433,13 @@ img {
 
 .card-one {
     left: 0;
+
     top: 50px;
 }
 
 .card-two {
     right: 0;
+
     bottom: 45px;
 }
 
@@ -394,6 +450,7 @@ img {
 
 .section {
     max-width: 1150px;
+
     margin: auto;
 
     padding: 100px 25px;
@@ -430,8 +487,7 @@ img {
 
     max-width: 600px;
 
-    margin:
-        15px auto 0 !important;
+    margin: 15px auto 0 !important;
 
     letter-spacing: 0;
 
@@ -694,6 +750,7 @@ img {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
@@ -735,6 +792,7 @@ img {
     position: absolute;
 
     top: 15px;
+
     left: 15px;
 
     padding: 5px 10px;
@@ -875,9 +933,7 @@ img {
     border:
         1px solid rgba(0, 255, 170, 0.12);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s;
 }
 
 .service-card:hover {
@@ -893,12 +949,6 @@ img {
     font-size: 38px;
 
     margin-bottom: 10px;
-
-    transition: 0.3s;
-}
-
-.service-card:hover .service-icon {
-    transform: scale(1.15);
 }
 
 .service-number {
@@ -914,8 +964,7 @@ img {
 .service-card h3 {
     font-size: 21px;
 
-    margin:
-        10px 0 12px;
+    margin: 10px 0 12px;
 }
 
 .service-card p {
@@ -932,12 +981,6 @@ img {
     font-size: 14px;
 
     font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.service-link:hover {
-    letter-spacing: 0.5px;
 }
 
 .marketplace-cta {
@@ -974,21 +1017,16 @@ img {
     color: #06131d;
 
     font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.marketplace-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 0 25px rgba(0, 255, 170, 0.4);
 }
 
 
 /* =========================================
    CONTACT
 ========================================= */
+
+.contact-section {
+    padding-bottom: 120px;
+}
 
 .contact-container {
     display: grid;
@@ -999,6 +1037,10 @@ img {
     gap: 50px;
 
     align-items: stretch;
+}
+
+.contact-info {
+    padding: 10px 0;
 }
 
 .contact-label {
@@ -1023,10 +1065,12 @@ img {
     margin-bottom: 15px;
 }
 
-.contact-heading > p {
+.contact-intro {
     color: #aebed0;
 
     margin-bottom: 30px;
+
+    max-width: 500px;
 }
 
 .contact-item {
@@ -1036,17 +1080,23 @@ img {
 
     gap: 15px;
 
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 
-    padding: 14px;
+    padding: 15px;
 
     border-radius: 10px;
+
+    border:
+        1px solid transparent;
 
     transition: 0.3s;
 }
 
 a.contact-item:hover {
     background: #0d1b2c;
+
+    border-color:
+        rgba(0, 255, 170, 0.2);
 }
 
 .contact-item > span {
@@ -1081,7 +1131,7 @@ a.contact-item:hover {
     border-radius: 14px;
 
     border:
-        1px solid rgba(0, 255, 170, 0.15);
+        1px solid rgba(0, 255, 170, 0.2);
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.15);
@@ -1121,9 +1171,11 @@ a.contact-item:hover {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 22px;
+
     height: 22px;
 
     border-radius: 50%;
@@ -1146,17 +1198,17 @@ a.contact-item:hover {
 
 
 /* =========================================
-   SCROLL ANIMATIONS
+   SCROLL ANIMATION
 ========================================= */
 
 .scroll-hidden {
     opacity: 0;
 
-    transform: translateY(40px);
+    transform: translateY(30px);
 
     transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
 .scroll-show {
@@ -1224,24 +1276,6 @@ a.contact-item:hover {
     font-weight: bold;
 
     font-size: 14px;
-
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    transform: translateY(-2px);
-}
-
-.footer-bottom {
-    text-align: center;
-
-    padding: 18px;
-
-    border-top: 1px solid #172536;
-
-    color: #718298;
-
-    font-size: 13px;
 }
 
 
@@ -1263,6 +1297,7 @@ a.contact-item:hover {
 
     .hero-description {
         margin-left: auto;
+
         margin-right: auto;
     }
 
@@ -1297,9 +1332,15 @@ a.contact-item:hover {
         padding: 15px 20px;
     }
 
+
+    /* SHOW MENU BUTTON */
+
     .menu-btn {
         display: block;
     }
+
+
+    /* HIDE DESKTOP MENU */
 
     .nav-links {
         display: none;
@@ -1326,7 +1367,10 @@ a.contact-item:hover {
             1px solid rgba(0, 255, 170, 0.15);
     }
 
-    .nav-links.active {
+
+    /* OPEN MENU WHEN CHECKBOX IS CHECKED */
+
+    .menu-toggle:checked ~ .nav-links {
         display: flex;
     }
 
@@ -1361,11 +1405,13 @@ a.contact-item:hover {
 
     .hero-image {
         width: 100%;
+
         min-width: 0;
     }
 
     .image-circle {
         width: 180px;
+
         height: 180px;
     }
 
@@ -1497,6 +1543,7 @@ a.contact-item:hover {
 
     .contact-buttons .btn {
         width: 100%;
+
         text-align: center;
     }
 
