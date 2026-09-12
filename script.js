@@ -1,42 +1,42 @@
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* =====================================================
+   ELISA WEB STUDIO
+   PORTFOLIO JAVASCRIPT
+===================================================== */
+
+
+/* ================= MOBILE MENU ================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
+
 if (menuBtn && navLinks) {
 
-    menuBtn.addEventListener("click", function (event) {
-
-        event.stopPropagation();
+    menuBtn.addEventListener("click", function () {
 
         navLinks.classList.toggle("active");
 
-        if (navLinks.classList.contains("active")) {
+        const isOpen =
+            navLinks.classList.contains("active");
 
-            menuBtn.setAttribute(
-                "aria-expanded",
-                "true"
-            );
+        menuBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
 
-        } else {
-
-            menuBtn.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
+        menuBtn.textContent =
+            isOpen ? "✕" : "☰";
 
     });
 
 
-    const navItems =
+    /* Close menu after clicking a link */
+
+    const navigationLinks =
         navLinks.querySelectorAll("a");
 
 
-    navItems.forEach(function (link) {
+    navigationLinks.forEach(function (link) {
 
         link.addEventListener("click", function () {
 
@@ -47,6 +47,8 @@ if (menuBtn && navLinks) {
                 "false"
             );
 
+            menuBtn.textContent = "☰";
+
         });
 
     });
@@ -54,201 +56,266 @@ if (menuBtn && navLinks) {
 }
 
 
-/* =========================================
-   TYPING EFFECT
-========================================= */
+/* ================= TYPING ANIMATION ================= */
 
 const typingText =
     document.querySelector(".typing-text");
 
-const words = [
-    "Web Developer",
-    "Website Designer",
-    "Creative Coder",
-    "Digital Creator"
-];
 
-let wordIndex = 0;
-let characterIndex = 0;
-let deleting = false;
+if (typingText) {
 
+    const words = [
+        "Web Developer",
+        "Creative Designer",
+        "Website Builder",
+        "Digital Creator"
+    ];
 
-function typeEffect() {
-
-    if (!typingText) {
-        return;
-    }
-
-    const currentWord =
-        words[wordIndex];
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let deleting = false;
 
 
-    if (deleting) {
+    function typeEffect() {
 
-        characterIndex--;
-
-    } else {
-
-        characterIndex++;
-
-    }
+        const currentWord =
+            words[wordIndex];
 
 
-    typingText.textContent =
-        currentWord.substring(
-            0,
-            characterIndex
-        );
+        if (!deleting) {
+
+            typingText.textContent =
+                currentWord.substring(
+                    0,
+                    letterIndex + 1
+                );
+
+            letterIndex++;
 
 
-    let speed =
-        deleting ? 70 : 120;
+            if (letterIndex === currentWord.length) {
+
+                deleting = true;
+
+                setTimeout(
+                    typeEffect,
+                    1500
+                );
+
+                return;
+
+            }
+
+        } else {
+
+            typingText.textContent =
+                currentWord.substring(
+                    0,
+                    letterIndex - 1
+                );
+
+            letterIndex--;
 
 
-    if (
-        !deleting &&
-        characterIndex === currentWord.length
-    ) {
+            if (letterIndex === 0) {
 
-        speed = 1500;
+                deleting = false;
 
-        deleting = true;
+                wordIndex =
+                    (wordIndex + 1) % words.length;
 
-    }
+            }
 
-    else if (
-        deleting &&
-        characterIndex === 0
-    ) {
-
-        deleting = false;
-
-        wordIndex++;
-
-        if (wordIndex >= words.length) {
-            wordIndex = 0;
         }
 
-        speed = 400;
+
+        setTimeout(
+            typeEffect,
+            deleting ? 60 : 100
+        );
 
     }
 
 
-    setTimeout(
-        typeEffect,
-        speed
-    );
+    typeEffect();
 
 }
 
-typeEffect();
 
+/* ================= CURRENT YEAR ================= */
 
-/* =========================================
-   CURRENT YEAR
-========================================= */
-
-const year =
+const yearElement =
     document.getElementById("year");
 
-if (year) {
 
-    year.textContent =
+if (yearElement) {
+
+    yearElement.textContent =
         new Date().getFullYear();
 
 }
 
 
-/* =========================================
-   SCROLL ANIMATIONS
-========================================= */
+/* ================= CONTACT FORM ================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const formMessage =
+    document.getElementById("formMessage");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            if (!name || !email || !message) {
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        "Please fill in all fields.";
+
+                }
+
+                return;
+
+            }
+
+
+            const recipient =
+                "elisawebstudio@gmail.com";
+
+
+            const subject =
+                encodeURIComponent(
+                    "Website Contact from " + name
+                );
+
+
+            const body =
+                encodeURIComponent(
+                    "Hello Elisa Web Studio,\n\n" +
+                    "Name: " + name + "\n" +
+                    "Email: " + email + "\n\n" +
+                    "Message:\n" + message
+                );
+
+
+            if (formMessage) {
+
+                formMessage.textContent =
+                    "Opening your email app...";
+
+            }
+
+
+            window.location.href =
+                "mailto:" +
+                recipient +
+                "?subject=" +
+                subject +
+                "&body=" +
+                body;
+
+        }
+    );
+
+}
+
+
+/* ================= SCROLL ANIMATIONS ================= */
 
 const animatedElements =
     document.querySelectorAll(
-        ".section-title, " +
-        ".about-content, " +
-        ".skill-card, " +
-        ".project-card, " +
-        ".projects-cta, " +
-        ".service-card, " +
-        ".marketplace-cta, " +
-        ".contact-container"
+        ".skill-card, .project-card, .service-card, .info-box, .contact-item"
     );
 
 
 animatedElements.forEach(function (element) {
 
-    element.classList.add(
-        "scroll-hidden"
-    );
+    element.classList.add("scroll-hidden");
 
 });
 
 
-if ("IntersectionObserver" in window) {
+const observer =
+    new IntersectionObserver(
+        function (entries) {
 
-    const observer =
-        new IntersectionObserver(
-            function (entries) {
+            entries.forEach(function (entry) {
 
-                entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                    entry.target.classList.add(
+                        "scroll-show"
+                    );
 
-                        entry.target.classList.add(
-                            "scroll-show"
-                        );
+                    entry.target.classList.remove(
+                        "scroll-hidden"
+                    );
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                    observer.unobserve(
+                        entry.target
+                    );
 
-                    }
+                }
 
-                });
+            });
 
-            },
-            {
-                threshold: 0.1
-            }
-        );
-
-
-    animatedElements.forEach(function (element) {
-
-        observer.observe(element);
-
-    });
-
-}
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
 
-/* =========================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-========================================= */
+animatedElements.forEach(function (element) {
 
-document.addEventListener(
-    "click",
-    function (event) {
+    observer.observe(element);
 
-        if (!navLinks || !menuBtn) {
+});
+
+
+/* ================= HEADER SHADOW ================= */
+
+const header =
+    document.querySelector(".header");
+
+
+window.addEventListener(
+    "scroll",
+    function () {
+
+        if (!header) {
             return;
         }
 
 
-        if (
-            !navLinks.contains(event.target) &&
-            !menuBtn.contains(event.target)
-        ) {
+        if (window.scrollY > 30) {
 
-            navLinks.classList.remove("active");
+            header.style.boxShadow =
+                "0 8px 30px rgba(0, 0, 0, 0.25)";
 
-            menuBtn.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+        } else {
+
+            header.style.boxShadow =
+                "none";
 
         }
 
