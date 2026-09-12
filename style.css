@@ -914,3 +914,15 @@ img {
     }
 
    }
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+    background: #07111f;
+    color: #9aaabd;
+    font-size: 14px;
+    border-top: 1px solid #163047;
+}
+
+.footer p {
+    margin: 0;
+}
