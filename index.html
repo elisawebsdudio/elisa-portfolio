@@ -12,7 +12,7 @@
 
     <meta
         name="description"
-        content="Elisa Web Studio — modern, responsive websites and digital solutions for individuals and small businesses."
+        content="Elisa Web Studio — modern websites, creative digital experiences, and web development."
     >
 
     <meta
@@ -21,11 +21,16 @@
     >
 
     <meta
-        name="theme-color"
-        content="#07111f"
+        name="robots"
+        content="index, follow"
     >
 
-    <title>Elisa Web Studio | Web Developer</title>
+    <title>
+        Elisa Web Studio | Web Developer & Creative Designer
+    </title>
+
+
+    <!-- ================= SOCIAL SHARING ================= -->
 
     <meta
         property="og:title"
@@ -34,7 +39,7 @@
 
     <meta
         property="og:description"
-        content="Modern websites and digital solutions by Elisa Web Studio."
+        content="Explore my portfolio, web projects, services, and marketplace."
     >
 
     <meta
@@ -42,7 +47,18 @@
         content="website"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        property="og:url"
+        content="https://elisawebsdudio.github.io/elisa-portfolio/"
+    >
+
+
+    <!-- ================= STYLESHEET ================= -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -56,46 +72,66 @@
 
         <nav class="navbar">
 
-            <a href="#home" class="logo">
-                <span>&lt;</span> Elisa <span>/&gt;</span>
+            <a
+                href="#home"
+                class="logo"
+            >
+                <span>&lt;</span>
+                Elisa
+                <span>/&gt;</span>
             </a>
 
 
-            <label for="menuToggle" class="menu-btn">
-    ☰
-</label>
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
 
-<input
-    type="checkbox"
-    id="menuToggle"
-    class="menu-toggle"
->
 
-
-            <ul class="nav-links" id="navLinks">
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
 
                 <li>
-                    <a href="#home">Home</a>
+                    <a href="#home">
+                        Home
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#about">About</a>
+                    <a href="#about">
+                        About
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#skills">Skills</a>
+                    <a href="#skills">
+                        Skills
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#projects">Projects</a>
+                    <a href="#projects">
+                        Projects
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#services">Services</a>
+                    <a href="#services">
+                        Services
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
@@ -111,11 +147,15 @@
     <main>
 
 
-        <!-- ================= HERO ================= -->
+        <!-- ================= HOME ================= -->
 
-        <section class="hero" id="home">
+        <section
+            class="hero"
+            id="home"
+        >
 
             <div class="hero-content">
+
 
                 <div class="hero-status">
 
@@ -127,29 +167,37 @@
 
 
                 <p class="welcome">
-                    👋 Welcome to Elisa Web Studio
+                    👋 Welcome to my portfolio
                 </p>
 
 
                 <h1>
+
                     Hi, I'm
-                    <span>Elisa Niyobuhungiro</span>
+
+                    <span>
+                        Elisa Niyobuhungiro
+                    </span>
+
                 </h1>
 
 
                 <h2>
+
                     I'm a
+
                     <span class="typing-text">
                         Web Developer
                     </span>
+
                 </h2>
 
 
                 <p class="hero-description">
 
-                    I create modern, responsive and
-                    user-friendly websites for individuals,
-                    creators and small businesses.
+                    I create modern, responsive
+                    and user-friendly websites.
+                    Welcome to my digital space.
 
                 </p>
 
@@ -168,28 +216,8 @@
                         href="#contact"
                         class="btn secondary-btn"
                     >
-                        Let's Work Together
+                        Contact Me
                     </a>
-
-                </div>
-
-
-                <div class="hero-highlights">
-
-                    <div>
-                        <strong>2+</strong>
-                        <span>Projects Built</span>
-                    </div>
-
-                    <div>
-                        <strong>100%</strong>
-                        <span>Passion</span>
-                    </div>
-
-                    <div>
-                        <strong>24/7</strong>
-                        <span>Learning</span>
-                    </div>
 
                 </div>
 
@@ -197,7 +225,7 @@
 
 
 
-            <!-- PROFILE PHOTO -->
+            <!-- ================= PROFILE PHOTO ================= -->
 
             <div class="hero-image">
 
@@ -205,19 +233,19 @@
 
                     <img
                         src="https://i.ibb.co/tw7912Jg/elisa-profile-final-1.jpg"
-                        alt="Elisa Niyobuhungiro - Elisa Web Studio"
+                        alt="Elisa Web Studio profile photo"
                     >
 
                 </div>
 
 
                 <div class="floating-card card-one">
-                    💻 Web Development
+                    💻 Coding
                 </div>
 
 
                 <div class="floating-card card-two">
-                    🚀 Creative Ideas
+                    🚀 Learning
                 </div>
 
             </div>
@@ -235,7 +263,9 @@
 
             <div class="section-title">
 
-                <p>GET TO KNOW ME</p>
+                <p>
+                    GET TO KNOW ME
+                </p>
 
                 <h2>
                     About <span>Me</span>
@@ -249,44 +279,32 @@
 
                 <div class="about-text">
 
-                    <span class="about-label">
-                        WHO I AM
-                    </span>
-
-
                     <h3>
-                        Building my skills,
-                        one project at a time.
+                        I'm passionate about
+                        technology and creativity.
                     </h3>
 
 
                     <p>
-
                         My name is
-                        <strong>Elisa Niyobuhungiro</strong>.
-                        I am a web developer focused on
-                        learning, building and improving
-                        digital experiences.
-
+                        Elisa Niyobuhungiro.
+                        I am learning web development
+                        and digital technology.
                     </p>
 
 
                     <p>
-
-                        I enjoy turning ideas into
-                        functional websites using
-                        HTML, CSS and JavaScript.
-
+                        I enjoy creating websites,
+                        learning new coding skills
+                        and turning ideas into
+                        real projects.
                     </p>
 
 
                     <p>
-
-                        My goal is to create useful,
-                        attractive and responsive
-                        websites for people and
-                        small businesses.
-
+                        My goal is to become a skilled
+                        developer and build useful
+                        digital solutions.
                     </p>
 
 
@@ -294,7 +312,7 @@
                         href="#contact"
                         class="btn primary-btn"
                     >
-                        Start a Project
+                        Let's Work Together
                     </a>
 
                 </div>
@@ -303,55 +321,54 @@
 
                 <div class="about-info">
 
-
                     <div class="info-box">
 
-                        <strong>01</strong>
+                        <strong>
+                            01
+                        </strong>
 
-                        <span>Creative</span>
-
-                        <small>
-                            Turning ideas into digital experiences.
-                        </small>
+                        <span>
+                            Creative
+                        </span>
 
                     </div>
 
 
                     <div class="info-box">
 
-                        <strong>02</strong>
+                        <strong>
+                            02
+                        </strong>
 
-                        <span>Dedicated</span>
-
-                        <small>
-                            Focused on improving every project.
-                        </small>
-
-                    </div>
-
-
-                    <div class="info-box">
-
-                        <strong>03</strong>
-
-                        <span>Responsive</span>
-
-                        <small>
-                            Websites designed for phones and computers.
-                        </small>
+                        <span>
+                            Hardworking
+                        </span>
 
                     </div>
 
 
                     <div class="info-box">
 
-                        <strong>04</strong>
+                        <strong>
+                            03
+                        </strong>
 
-                        <span>Growing</span>
+                        <span>
+                            Learning
+                        </span>
 
-                        <small>
-                            Constantly learning new technologies.
-                        </small>
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <strong>
+                            04
+                        </strong>
+
+                        <span>
+                            Focused
+                        </span>
 
                     </div>
 
@@ -372,7 +389,9 @@
 
             <div class="section-title">
 
-                <p>WHAT I WORK WITH</p>
+                <p>
+                    WHAT I AM LEARNING
+                </p>
 
                 <h2>
                     My <span>Skills</span>
@@ -384,30 +403,36 @@
             <div class="skills-container">
 
 
+                <!-- HTML -->
+
                 <div class="skill-card">
 
                     <div class="skill-icon">
                         &lt;/&gt;
                     </div>
 
-                    <h3>HTML</h3>
+                    <h3>
+                        HTML
+                    </h3>
 
                     <p>
-                        Creating clean and structured
-                        website pages.
+                        Creating the structure
+                        of modern websites.
                     </p>
 
                     <div class="skill-bar">
-                        <div class="skill-progress html-progress"></div>
-                    </div>
 
-                    <span class="skill-level">
-                        Strong foundation
-                    </span>
+                        <div
+                            class="skill-progress html-progress"
+                        ></div>
+
+                    </div>
 
                 </div>
 
 
+
+                <!-- CSS -->
 
                 <div class="skill-card">
 
@@ -415,24 +440,28 @@
                         #
                     </div>
 
-                    <h3>CSS</h3>
+                    <h3>
+                        CSS
+                    </h3>
 
                     <p>
-                        Creating attractive and
-                        responsive designs.
+                        Designing attractive
+                        and responsive websites.
                     </p>
 
                     <div class="skill-bar">
-                        <div class="skill-progress css-progress"></div>
-                    </div>
 
-                    <span class="skill-level">
-                        Developing
-                    </span>
+                        <div
+                            class="skill-progress css-progress"
+                        ></div>
+
+                    </div>
 
                 </div>
 
 
+
+                <!-- JAVASCRIPT -->
 
                 <div class="skill-card">
 
@@ -440,24 +469,28 @@
                         JS
                     </div>
 
-                    <h3>JavaScript</h3>
+                    <h3>
+                        JavaScript
+                    </h3>
 
                     <p>
-                        Adding interaction and
-                        useful website functionality.
+                        Adding interaction
+                        and functionality.
                     </p>
 
                     <div class="skill-bar">
-                        <div class="skill-progress js-progress"></div>
-                    </div>
 
-                    <span class="skill-level">
-                        Developing
-                    </span>
+                        <div
+                            class="skill-progress js-progress"
+                        ></div>
+
+                    </div>
 
                 </div>
 
 
+
+                <!-- VIDEO EDITING -->
 
                 <div class="skill-card">
 
@@ -465,20 +498,22 @@
                         🎬
                     </div>
 
-                    <h3>Video Editing</h3>
+                    <h3>
+                        Video Editing
+                    </h3>
 
                     <p>
-                        Creating and editing digital
-                        content for online platforms.
+                        Creating and editing
+                        digital content.
                     </p>
 
                     <div class="skill-bar">
-                        <div class="skill-progress video-progress"></div>
-                    </div>
 
-                    <span class="skill-level">
-                        Developing
-                    </span>
+                        <div
+                            class="skill-progress video-progress"
+                        ></div>
+
+                    </div>
 
                 </div>
 
@@ -497,22 +532,15 @@
 
             <div class="section-title">
 
-                <p>MY WORK</p>
-
-                <h2>
-                    Featured <span>Projects</span>
-                </h2>
-
-                <p class="section-description">
-
-                    A look at some of the websites
-                    I have built while developing
-                    my web development skills.
-
+                <p>
+                    MY RECENT WORK
                 </p>
 
-            </div>
+                <h2>
+                    My <span>Projects</span>
+                </h2>
 
+            </div>
 
 
             <div class="projects-container">
@@ -520,13 +548,9 @@
 
                 <!-- PROJECT 01 -->
 
-                <article class="project-card">
+                <div class="project-card">
 
                     <div class="project-image project-one">
-
-                        <span class="project-badge">
-                            MY WEBSITE
-                        </span>
 
                         <div class="project-icon">
                             &lt;/&gt;
@@ -541,18 +565,14 @@
                             PROJECT 01
                         </p>
 
-
                         <h3>
-                            Elisa Web Studio Portfolio
+                            Personal Portfolio
                         </h3>
 
-
                         <p>
-
-                            My personal portfolio website
-                            showcasing my skills, services,
-                            creativity and web development journey.
-
+                            A modern personal portfolio
+                            created with HTML, CSS
+                            and JavaScript.
                         </p>
 
 
@@ -569,24 +589,20 @@
                             href="#home"
                             class="project-link"
                         >
-                            You Are Here →
+                            View Project →
                         </a>
 
                     </div>
 
-                </article>
+                </div>
 
 
 
                 <!-- PROJECT 02 -->
 
-                <article class="project-card">
+                <div class="project-card">
 
                     <div class="project-image project-two">
-
-                        <span class="project-badge">
-                            LIVE PROJECT
-                        </span>
 
                         <div class="project-icon">
                             🛒
@@ -601,18 +617,14 @@
                             PROJECT 02
                         </p>
 
-
                         <h3>
                             Product Marketplace
                         </h3>
 
-
                         <p>
-
-                            A marketplace website where
-                            users can discover products
-                            and advertise products online.
-
+                            A website where people
+                            can advertise and discover
+                            products online.
                         </p>
 
 
@@ -621,45 +633,74 @@
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
-                            <span>Local Storage</span>
 
                         </div>
 
 
                         <a
                             href="https://elisawebsdudio.github.io/marketplace-/"
-                            class="project-link"
+                            class="project-link marketplace-link"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            🛒 Visit Live Marketplace →
+                            🛒 View Marketplace →
                         </a>
 
                     </div>
 
-                </article>
-
-            </div>
+                </div>
 
 
 
-            <div class="projects-cta">
+                <!-- PROJECT 03 -->
 
-                <h3>
-                    Have an idea for a website?
-                </h3>
+                <div class="project-card">
 
-                <p>
-                    Let's turn your idea into a real
-                    digital project.
-                </p>
+                    <div class="project-image project-three">
 
-                <a
-                    href="#contact"
-                    class="btn primary-btn"
-                >
-                    Discuss Your Project
-                </a>
+                        <div class="project-icon">
+                            🚀
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <p class="project-number">
+                            PROJECT 03
+                        </p>
+
+                        <h3>
+                            Coming Soon
+                        </h3>
+
+                        <p>
+                            A future project showing
+                            my creativity and growing
+                            technical skills.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Creative</span>
+                            <span>Web</span>
+                            <span>Future</span>
+
+                        </div>
+
+
+                        <a
+                            href="#contact"
+                            class="project-link"
+                        >
+                            Coming Soon →
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -676,132 +717,14 @@
 
             <div class="section-title">
 
-                <p>WHAT I CAN HELP WITH</p>
+                <p>
+                    WHAT I CAN DO
+                </p>
 
                 <h2>
                     My <span>Services</span>
                 </h2>
 
-                <p class="section-description">
-
-                    Simple and professional digital
-                    solutions for individuals and
-                    small businesses.
-
-                </p>
-
-            </div>
-
-
-            <div class="services-container">
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🌐
-                    </div>
-
-                    <span class="service-number">
-                        01
-                    </span>
-
-                    <h3>
-                        Website Development
-                    </h3>
-
-                    <p>
-
-                        I build responsive websites
-                        using HTML, CSS and JavaScript
-                        for individuals and small businesses.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link"
-                    >
-                        Request a Website →
-                    </a>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🎨
-                    </div>
-
-                    <span class="service-number">
-                        02
-                    </span>
-
-                    <h3>
-                        Website Design
-                    </h3>
-
-                    <p>
-
-                        I create clean, attractive and
-                        user-friendly designs that work
-                        well on phones and computers.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link"
-                    >
-                        Discuss Design →
-                    </a>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🎬
-                    </div>
-
-                    <span class="service-number">
-                        03
-                    </span>
-
-                    <h3>
-                        Creative Content
-                    </h3>
-
-                    <p>
-
-                        I create and edit digital content
-                        while continuing to develop my
-                        creative and technical skills.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link"
-                    >
-                        Get in Touch →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="marketplace-cta">
-
-                <p>
-                    Want to see one of my projects?
-                </p>
 
                 <a
                     href="https://elisawebsdudio.github.io/marketplace-/"
@@ -809,8 +732,78 @@
                     rel="noopener noreferrer"
                     class="marketplace-button"
                 >
-                    🛒 Explore My Marketplace
+                    🛒 View My Marketplace
                 </a>
+
+            </div>
+
+
+            <div class="services-container">
+
+
+                <!-- SERVICE 01 -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Website Development
+                    </h3>
+
+                    <p>
+                        I build responsive websites
+                        using HTML, CSS and JavaScript
+                        for individuals and small businesses.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SERVICE 02 -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Website Design
+                    </h3>
+
+                    <p>
+                        I create clean, attractive and
+                        user-friendly website designs
+                        that work well on phones and computers.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SERVICE 03 -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🎬
+                    </div>
+
+                    <h3>
+                        Creative Content
+                    </h3>
+
+                    <p>
+                        I create and edit digital content
+                        while continuing to develop my
+                        creative and technical skills.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -827,22 +820,15 @@
 
             <div class="section-title">
 
-                <p>LET'S CONNECT</p>
-
-                <h2>
-                    Start a <span>Project</span>
-                </h2>
-
-                <p class="section-description">
-
-                    Have a website idea or project
-                    you'd like to discuss?
-                    I'd love to hear about it.
-
+                <p>
+                    GET IN TOUCH
                 </p>
 
-            </div>
+                <h2>
+                    Contact <span>Me</span>
+                </h2>
 
+            </div>
 
 
             <div class="contact-container">
@@ -852,40 +838,31 @@
 
                 <div class="contact-info">
 
-                    <span class="contact-label">
-                        GET IN TOUCH
-                    </span>
-
-
                     <h3>
-                        Let's build something
-                        useful together.
+                        Let's create something
+                        great together.
                     </h3>
 
 
-                    <p class="contact-intro">
-
-                        Whether you need a simple
-                        business website, a landing page,
-                        or want to discuss a digital idea,
-                        feel free to contact me.
-
+                    <p>
+                        Have a website idea or a project
+                        you'd like to discuss? Get in touch.
                     </p>
-
 
 
                     <!-- EMAIL -->
 
-                    <a
-                        href="mailto:elisawebstudio@gmail.com"
-                        class="contact-item"
-                    >
+                    <div class="contact-item">
 
-                        <span>📧</span>
+                        <span>
+                            📧
+                        </span>
 
                         <div>
 
-                            <strong>Email</strong>
+                            <strong>
+                                Email
+                            </strong>
 
                             <p>
                                 elisawebstudio@gmail.com
@@ -893,4 +870,60 @@
 
                         </div>
 
-                    </
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="contact-item">
+
+                        <span>
+                            📱
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <p>
+                                +250 781651922
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="contact-item">
+
+                        <span>
+                            📍
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Location
+                            </strong>
+
+                            <p>
+                                Rwanda
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT BUTTONS -->
+
+                    <div class="contact-buttons">
+
+                        <a
+                            href="tel:+250781651922"
+                            class="btn primary-btn"
+     
