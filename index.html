@@ -2,920 +2,813 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Elisa Web Studio | Web Developer & Creative Designer</title>
-
-    <meta
-        name="description"
-        content="Elisa Web Studio — modern websites, creative digital experiences, and web development."
-    >
-
-    <meta name="author" content="Elisa Web Studio">
-
-    <meta
-        property="og:title"
-        content="Elisa Web Studio | Web Developer"
-    >
-
-    <meta
-        property="og:description"
-        content="Explore my portfolio, web projects, services, and marketplace."
-    >
-
-    <meta
-        property="og:url"
-        content="https://elisawebsdudio.github.io/elisa-portfolio/"
-    >
-
-    <style>
-
-        /* ================================
-           GENERAL
-        ================================= */
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #07111f;
-            color: white;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        section {
-            padding: 90px 20px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 35px;
-            margin-bottom: 45px;
-        }
-
-        /* ================================
-           HEADER
-        ================================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(7, 17, 31, 0.97);
-            z-index: 1000;
-            border-bottom: 1px solid #163047;
-        }
-
-        .header-container {
-            max-width: 1150px;
-            margin: auto;
-            height: 75px;
-            padding: 0 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .logo span {
-            color: #00ffaa;
-        }
-
-        /* ================================
-           NAVIGATION
-        ================================= */
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #dce7f2;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #00ffaa;
-        }
-
-        /* MENU BUTTON */
-
-        .menu-btn {
-            display: none;
-            background: #07111f;
-            color: white;
-            border: 2px solid #00ffaa;
-            border-radius: 8px;
-            font-size: 30px;
-            width: 55px;
-            height: 55px;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        /* ================================
-           HERO
-        ================================= */
-
-        .hero {
-            min-height: 100vh;
-            padding-top: 130px;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 1150px;
-            width: 100%;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 55px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #00ffaa;
-        }
-
-        .welcome {
-            color: #00ffaa;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .typing-text {
-            color: #00ffaa;
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .hero-description {
-            color: #9aaabd;
-            font-size: 18px;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 8px;
-            font-weight: bold;
-            border: 2px solid #00ffaa;
-            transition: 0.3s;
-        }
-
-        .primary-btn {
-            background: #00ffaa;
-            color: #07111f;
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .secondary-btn {
-            color: #00ffaa;
-            background: transparent;
-        }
-
-        .secondary-btn:hover {
-            background: #00ffaa;
-            color: #07111f;
-        }
-
-        /* PROFILE IMAGE */
-
-        .hero-image {
-            text-align: center;
-        }
-
-        .image-circle {
-            width: 230px;
-            height: 230px;
-            margin: auto;
-
-            border-radius: 50%;
-            object-fit: cover;
-
-            border: 4px solid #00ffaa;
-
-            box-shadow:
-                0 0 20px rgba(0, 255, 170, 0.5),
-                0 0 50px rgba(0, 255, 170, 0.15);
-        }
-
-        /* ================================
-           ABOUT
-        ================================= */
-
-        .about {
-            background: #091727;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            color: #9aaabd;
-            font-size: 18px;
-        }
-
-        .info-boxes {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .info-box {
-            background: #0d2034;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #163b52;
-        }
-
-        .info-box h3 {
-            color: #00ffaa;
-            margin-bottom: 10px;
-        }
-
-        /* ================================
-           SKILLS
-        ================================= */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: #0d2034;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #163b52;
-        }
-
-        .skill-title {
-            margin-bottom: 15px;
-        }
-
-        .skill-title h3 {
-            color: white;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: #1d3448;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background: #00ffaa;
-            border-radius: 20px;
-        }
-
-        .html-progress {
-            width: 85%;
-        }
-
-        .css-progress {
-            width: 75%;
-        }
-
-        .js-progress {
-            width: 55%;
-        }
-
-        .video-progress {
-            width: 60%;
-        }
-
-        /* ================================
-           PROJECTS
-        ================================= */
-
-        .projects {
-            background: #091727;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            background: #0d2034;
-            padding: 30px;
-            border-radius: 14px;
-            border: 1px solid #163b52;
-        }
-
-        .project-card h3 {
-            margin-bottom: 15px;
-            color: #00ffaa;
-        }
-
-        .project-card p {
-            color: #9aaabd;
-            margin-bottom: 20px;
-        }
-
-        .project-link {
-            color: #00ffaa;
-            font-weight: bold;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* ================================
-           SERVICES
-        ================================= */
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            background: #0d2034;
-            padding: 30px;
-            border-radius: 14px;
-            text-align: center;
-            border: 1px solid #163b52;
-        }
-
-        .service-card h3 {
-            color: #00ffaa;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: #9aaabd;
-        }
-
-        .marketplace-button {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* ================================
-           CONTACT
-        ================================= */
-
-        .contact {
-            background: #091727;
-        }
-
-        .contact-content {
-            max-width: 950px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            color: #00ffaa;
-            margin-bottom: 20px;
-            font-size: 25px;
-        }
-
-        .contact-info p {
-            color: #9aaabd;
-            margin-bottom: 15px;
-            font-size: 17px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px;
-            background: #0d2034;
-            color: white;
-            border: 1px solid #24445c;
-            border-radius: 8px;
-            outline: none;
-            font-size: 16px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #00ffaa;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-        }
-
-        .form-message {
-            color: #00ffaa;
-            font-weight: bold;
-        }
-
-        /* ================================
-           FOOTER
-        ================================= */
-
-        .footer {
-            text-align: center;
-            padding: 25px 15px;
-            background: #07111f;
-            color: #9aaabd;
-            border-top: 1px solid #163047;
-        }
-
-        /* ================================
-           MOBILE
-        ================================= */
-
-        @media (max-width: 700px) {
-
-            .header-container {
-                height: 70px;
-            }
-
-            .logo {
-                font-size: 25px;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            nav {
-                display: none;
-
-                position: absolute;
-                top: 70px;
-                left: 0;
-
-                width: 100%;
-
-                background: #07111f;
-
-                padding: 20px;
-
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 5px;
-
-                border-top: 1px solid #163047;
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav a {
-                padding: 14px;
-                text-align: center;
-                border-bottom: 1px solid #163047;
-            }
-
-            .hero {
-                padding-top: 120px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .image-circle {
-                width: 180px;
-                height: 180px;
-            }
-
-            .info-boxes,
-            .skills-grid,
-            .projects-grid,
-            .services-grid,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 30px;
-            }
-        }
-
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Elisa Web Studio | Web Developer & Creative Designer</title>
+
+<meta
+name="description"
+content="Elisa Web Studio — modern websites, creative digital experiences, and web development."
+>
+
+<style>
+
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    padding: 90px 20px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(7, 17, 31, 0.97);
+    z-index: 1000;
+    border-bottom: 1px solid #163047;
+}
+
+.header-container {
+    max-width: 1150px;
+    margin: auto;
+    height: 75px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00ffaa;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #dce7f2;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #00ffaa;
+}
+
+
+/* MENU BUTTON */
+
+.menu-btn {
+    display: none;
+    background: #07111f;
+    color: white;
+    border: 2px solid #00ffaa;
+    border-radius: 8px;
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 130px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1150px;
+    width: 100%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.welcome {
+    color: #00ffaa;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00ffaa;
+}
+
+.typing-text {
+    color: #00ffaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    color: #9aaabd;
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #00ffaa;
+}
+
+.primary-btn {
+    background: #00ffaa;
+    color: #07111f;
+}
+
+.secondary-btn {
+    color: #00ffaa;
+    background: transparent;
+}
+
+
+/* PROFILE IMAGE */
+
+.hero-image {
+    text-align: center;
+}
+
+.image-circle {
+    width: 230px;
+    height: 230px;
+    margin: auto;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid #00ffaa;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 170, 0.5),
+        0 0 50px rgba(0, 255, 170, 0.15);
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+.about {
+    background: #091727;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: #9aaabd;
+    font-size: 18px;
+}
+
+.info-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.info-box {
+    background: #0d2034;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #163b52;
+}
+
+.info-box h3 {
+    color: #00ffaa;
+    margin-bottom: 10px;
+}
+
+
+/* ================================
+   SKILLS
+================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background: #0d2034;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #163b52;
+}
+
+.skill-title {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #1d3448;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #00ffaa;
+    border-radius: 20px;
+}
+
+.html-progress {
+    width: 85%;
+}
+
+.css-progress {
+    width: 75%;
+}
+
+.js-progress {
+    width: 55%;
+}
+
+.video-progress {
+    width: 60%;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .header-container {
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #07111f;
+
+        padding: 20px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 5px;
+
+        border-top: 1px solid #163047;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid #163047;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .image-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .info-boxes,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <!-- ================================
-         HEADER
-    ================================= -->
 
-    <header>
+<!-- ================================
+     HEADER
+================================ -->
 
-        <div class="header-container">
+<header>
 
-            <a href="#home" class="logo">
-                &lt; Elisa <span>/&gt;</span>
-            </a>
+<div class="header-container">
 
-            <button
-                id="menuBtn"
-                class="menu-btn"
-                aria-label="Open menu"
-                type="button"
-            >
-                ☰
-            </button>
-
-            <nav id="navLinks">
-
-                <a href="#home">Home</a>
-
-                <a href="#about">About</a>
-
-                <a href="#skills">Skills</a>
-
-                <a href="#projects">Projects</a>
-
-                <a href="#services">Services</a>
-
-                <a href="#contact">Contact</a>
-
-            </nav>
-
-        </div>
-
-    </header>
+<a href="#home" class="logo">
+&lt; Elisa <span>/&gt;</span>
+</a>
 
 
-    <!-- ================================
-         HOME
-    ================================= -->
-
-    <section id="home" class="hero">
-
-        <div class="hero-content">
-
-            <div>
-
-                <p class="welcome">
-                    Welcome to my portfolio
-                </p>
-
-                <h1>
-                    Hi, I'm
-                    <span>Elisa Niyobuhungiro</span>
-                </h1>
-
-                <div class="typing-text">
-                    Web Developer
-                </div>
-
-                <p class="hero-description">
-                    I build modern websites, creative digital experiences,
-                    and useful online solutions while learning and improving
-                    every day.
-                </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="#projects"
-                        class="btn primary-btn"
-                    >
-                        View My Work
-                    </a>
-
-                    <a
-                        href="#contact"
-                        class="btn secondary-btn"
-                    >
-                        Contact Me
-                    </a>
-
-                </div>
-
-            </div>
+<button
+id="menuBtn"
+class="menu-btn"
+type="button"
+>
+☰
+</button>
 
 
-            <div class="hero-image">
+<nav id="navLinks">
 
-                <img
-                    src="https://i.ibb.co/tw7912Jg/elisa-profile-final-1.jpg"
-                    alt="Elisa Web Studio"
-                    class="image-circle"
-                >
+<a href="#home">Home</a>
 
-            </div>
+<a href="#about">About</a>
 
-        </div>
+<a href="#skills">Skills</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#services">Services</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================================
+     HOME
+================================ -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+
+<div>
+
+<p class="welcome">
+Welcome to my portfolio
+</p>
+
+
+<h1>
+Hi, I'm
+<span>Elisa Niyobuhungiro</span>
+</h1>
+
+
+<div class="typing-text">
+Web Developer
+</div>
+
+
+<p class="hero-description">
+I build modern websites, creative digital experiences,
+and useful online solutions while learning and improving
+every day.
+</p>
+
+
+<div class="buttons">
+
+<a
+href="#projects"
+class="btn primary-btn"
+>
+View My Work
+</a>
+
+
+<a
+href="#contact"
+class="btn secondary-btn"
+>
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="https://i.ibb.co/tw7912Jg/elisa-profile-final-1.jpg"
+alt="Elisa Web Studio"
+class="image-circle"
+>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     ABOUT
+================================ -->
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2>About Me</h2>
+
+
+<div class="about-content">
+
+<p>
+I'm Elisa, a young web developer and creative learner
+interested in building websites and digital projects.
+I enjoy turning ideas into simple, useful and modern
+web experiences.
+</p>
+
+
+<div class="info-boxes">
+
+
+<div class="info-box">
+
+<h3>Web Development</h3>
+
+<p>
+Building responsive and modern websites.
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>Creative Design</h3>
+
+<p>
+Creating clean and attractive digital experiences.
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>Learning</h3>
+
+<p>
+Improving my coding and creative skills every day.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     SKILLS
+================================ -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2>My Skills</h2>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-title">
+<h3>HTML</h3>
+</div>
+
+<div class="progress-bar">
+<div class="progress html-progress"></div>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-title">
+<h3>CSS</h3>
+</div>
+
+<div class="progress-bar">
+<div class="progress css-progress"></div>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-title">
+<h3>JavaScript</h3>
+</div>
+
+<div class="progress-bar">
+<div class="progress js-progress"></div>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-title">
+<h3>Video Editing</h3>
+</div>
+
+<div class="progress-bar">
+<div class="progress video-progress"></div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
     </section>
-
-
     <!-- ================================
-         ABOUT
-    ================================= -->
+     PROJECTS
+================================ -->
 
-    <section id="about" class="about">
+<section id="projects" class="projects">
 
-        <div class="container">
+<div class="container">
 
-            <h2>About Me</h2>
+<h2>My Projects</h2>
 
-            <div class="about-content">
+<div class="projects-grid">
 
-                <p>
-                    I'm Elisa, a young web developer and creative learner
-                    interested in building websites and digital projects.
-                    I enjoy turning ideas into simple, useful and modern
-                    web experiences.
-                </p>
 
-                <div class="info-boxes">
+<div class="project-card">
 
-                    <div class="info-box">
+<h3>Personal Portfolio</h3>
 
-                        <h3>Web Development</h3>
+<p>
+My personal portfolio website showcasing my skills,
+services and projects.
+</p>
 
-                        <p>
-                            Building responsive and modern websites.
-                        </p>
+<a
+href="https://elisawebsdudio.github.io/elisa-portfolio/"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+>
+View Portfolio →
+</a>
 
-                    </div>
+</div>
 
 
-                    <div class="info-box">
+<div class="project-card">
 
-                        <h3>Creative Design</h3>
+<h3>Product Marketplace</h3>
 
-                        <p>
-                            Creating clean and attractive digital experiences.
-                        </p>
+<p>
+A marketplace website where users can explore
+products and post product listings.
+</p>
 
-                    </div>
+<a
+href="https://elisawebsdudio.github.io/marketplace-/"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+>
+🛒 View Marketplace →
+</a>
 
+</div>
 
-                    <div class="info-box">
 
-                        <h3>Learning</h3>
+<div class="project-card">
 
-                        <p>
-                            Improving my coding and creative skills every day.
-                        </p>
+<h3>Coming Soon</h3>
 
-                    </div>
+<p>
+More creative web projects are currently being
+developed.
+</p>
 
-                </div>
+</div>
 
-            </div>
 
-        </div>
+</div>
 
-    </section>
+</div>
 
+</section>
 
-    <!-- ================================
-         SKILLS
-    ================================= -->
 
-    <section id="skills">
+<!-- ================================
+     SERVICES
+================================ -->
 
-        <div class="container">
+<section id="services">
 
-            <h2>My Skills</h2>
+<div class="container">
 
-            <div class="skills-grid">
+<h2>My Services</h2>
 
-                <div class="skill-card">
+<div class="services-grid">
 
-                    <div class="skill-title">
-                        <h3>HTML</h3>
-                    </div>
 
-                    <div class="progress-bar">
-                        <div class="progress html-progress"></div>
-                    </div>
+<div class="service-card">
 
-                </div>
+<h3>Website Development</h3>
 
+<p>
+Building responsive websites for individuals
+and small businesses.
+</p>
 
-                <div class="skill-card">
+</div>
 
-                    <div class="skill-title">
-                        <h3>CSS</h3>
-                    </div>
 
-                    <div class="progress-bar">
-                        <div class="progress css-progress"></div>
-                    </div>
+<div class="service-card">
 
-                </div>
+<h3>Website Design</h3>
 
+<p>
+Creating clean, modern and user-friendly
+website designs.
+</p>
 
-                <div class="skill-card">
+</div>
 
-                    <div class="skill-title">
-                        <h3>JavaScript</h3>
-                    </div>
 
-                    <div class="progress-bar">
-                        <div class="progress js-progress"></div>
-                    </div>
+<div class="service-card">
 
-                </div>
+<h3>Creative Content</h3>
 
+<p>
+Helping create simple digital and visual content
+for online platforms.
+</p>
 
-                <div class="skill-card">
+</div>
 
-                    <div class="skill-title">
-                        <h3>Video Editing</h3>
-                    </div>
 
-                    <div class="progress-bar">
-                        <div class="progress video-progress"></div>
-                    </div>
+</div>
 
-                </div>
 
-            </div>
+<div class="marketplace-button">
 
-        </div>
+<a
+href="https://elisawebsdudio.github.io/marketplace-/"
+target="_blank"
+rel="noopener noreferrer"
+class="btn primary-btn"
+>
+🛒 Visit My Marketplace
+</a>
 
-    </section>
+</div>
 
+</div>
 
-    <!-- ================================
-         PROJECTS
-    ================================= -->
-
-    <section id="projects" class="projects">
-
-        <div class="container">
-
-            <h2>My Projects</h2>
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-
-                    <h3>Personal Portfolio</h3>
-
-                    <p>
-                        My personal portfolio website showcasing my skills,
-                        services and projects.
-                    </p>
-
-                    <a
-                        href="https://elisawebsdudio.github.io/elisa-portfolio/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        View Portfolio →
-                    </a>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <h3>Product Marketplace</h3>
-
-                    <p>
-                        A marketplace website where users can explore
-                        products and post product listings.
-                    </p>
-
-                    <a
-                        href="https://elisawebsdudio.github.io/marketplace-/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        🛒 View Marketplace →
-                    </a>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <h3>Coming Soon</h3>
-
-                    <p>
-                        More creative web projects are currently being
-                        developed.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================================
-         SERVICES
-    ================================= -->
-
-    <section id="services">
-
-        <div class="container">
-
-            <h2>My Services</h2>
-
-            <div class="services-grid">
-
-                <div class="service-card">
-                    
+</section>
