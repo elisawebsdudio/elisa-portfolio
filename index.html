@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -10,20 +9,14 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <title>Elisa Web Studio | Web Developer & Creative Designer</title>
+
     <meta
         name="description"
         content="Elisa Web Studio — modern websites, creative digital experiences, and web development."
     >
 
-    <meta
-        name="author"
-        content="Elisa Web Studio"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+    <meta name="author" content="Elisa Web Studio">
 
     <meta
         property="og:title"
@@ -36,503 +29,835 @@
     >
 
     <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
         property="og:url"
         content="https://elisawebsdudio.github.io/elisa-portfolio/"
     >
 
-    <title>
-        Elisa Web Studio | Web Developer & Creative Designer
-    </title>
+    <style>
 
-    <link rel="stylesheet" href="style.css">
+        /* ================================
+           GENERAL
+        ================================= */
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 45px;
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(7, 17, 31, 0.97);
+            z-index: 1000;
+            border-bottom: 1px solid #163047;
+        }
+
+        .header-container {
+            max-width: 1150px;
+            margin: auto;
+            height: 75px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            color: #00ffaa;
+        }
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #dce7f2;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ffaa;
+        }
+
+        /* MENU BUTTON */
+
+        .menu-btn {
+            display: none;
+            background: #07111f;
+            color: white;
+            border: 2px solid #00ffaa;
+            border-radius: 8px;
+            font-size: 30px;
+            width: 55px;
+            height: 55px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 130px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00ffaa;
+        }
+
+        .welcome {
+            color: #00ffaa;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .typing-text {
+            color: #00ffaa;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: #9aaabd;
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 2px solid #00ffaa;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #00ffaa;
+            color: #07111f;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            color: #00ffaa;
+            background: transparent;
+        }
+
+        .secondary-btn:hover {
+            background: #00ffaa;
+            color: #07111f;
+        }
+
+        /* PROFILE IMAGE */
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .image-circle {
+            width: 230px;
+            height: 230px;
+            margin: auto;
+
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 4px solid #00ffaa;
+
+            box-shadow:
+                0 0 20px rgba(0, 255, 170, 0.5),
+                0 0 50px rgba(0, 255, 170, 0.15);
+        }
+
+        /* ================================
+           ABOUT
+        ================================= */
+
+        .about {
+            background: #091727;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #9aaabd;
+            font-size: 18px;
+        }
+
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .info-box {
+            background: #0d2034;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #163b52;
+        }
+
+        .info-box h3 {
+            color: #00ffaa;
+            margin-bottom: 10px;
+        }
+
+        /* ================================
+           SKILLS
+        ================================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #0d2034;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #163b52;
+        }
+
+        .skill-title {
+            margin-bottom: 15px;
+        }
+
+        .skill-title h3 {
+            color: white;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #1d3448;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #00ffaa;
+            border-radius: 20px;
+        }
+
+        .html-progress {
+            width: 85%;
+        }
+
+        .css-progress {
+            width: 75%;
+        }
+
+        .js-progress {
+            width: 55%;
+        }
+
+        .video-progress {
+            width: 60%;
+        }
+
+        /* ================================
+           PROJECTS
+        ================================= */
+
+        .projects {
+            background: #091727;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #0d2034;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #163b52;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: #00ffaa;
+        }
+
+        .project-card p {
+            color: #9aaabd;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #00ffaa;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ================================
+           SERVICES
+        ================================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #0d2034;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid #163b52;
+        }
+
+        .service-card h3 {
+            color: #00ffaa;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #9aaabd;
+        }
+
+        .marketplace-button {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ================================
+           CONTACT
+        ================================= */
+
+        .contact {
+            background: #091727;
+        }
+
+        .contact-content {
+            max-width: 950px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            color: #00ffaa;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .contact-info p {
+            color: #9aaabd;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            background: #0d2034;
+            color: white;
+            border: 1px solid #24445c;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #00ffaa;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .form-message {
+            color: #00ffaa;
+            font-weight: bold;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            text-align: center;
+            padding: 25px 15px;
+            background: #07111f;
+            color: #9aaabd;
+            border-top: 1px solid #163047;
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            .header-container {
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+
+                position: absolute;
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: #07111f;
+
+                padding: 20px;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 5px;
+
+                border-top: 1px solid #163047;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 14px;
+                text-align: center;
+                border-bottom: 1px solid #163047;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .image-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .info-boxes,
+            .skills-grid,
+            .projects-grid,
+            .services-grid,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
 </head>
-
 
 <body>
 
+    <!-- ================================
+         HEADER
+    ================================= -->
 
-<!-- =========================================
-     HEADER
-========================================= -->
+    <header>
 
-<header class="header">
+        <div class="header-container">
 
-    <div class="container nav-container">
+            <a href="#home" class="logo">
+                &lt; Elisa <span>/&gt;</span>
+            </a>
 
-        <a href="#home" class="logo">
-            &lt; Elisa /&gt;
-        </a>
+            <button
+                id="menuBtn"
+                class="menu-btn"
+                aria-label="Open menu"
+                type="button"
+            >
+                ☰
+            </button>
 
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-            ☰
-        </button>
+            <nav id="navLinks">
 
-        <nav>
+                <a href="#home">Home</a>
 
-            <ul class="nav-links" id="navLinks">
+                <a href="#about">About</a>
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
+                <a href="#skills">Skills</a>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+                <a href="#projects">Projects</a>
 
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
+                <a href="#services">Services</a>
 
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
+                <a href="#contact">Contact</a>
 
-                <li>
-                    <a href="#services">Services</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================================
-     HOME
-========================================= -->
-
-<section id="home" class="hero">
-
-    <div class="container hero-content">
-
-        <div class="hero-text">
-
-            <p class="welcome">
-                Welcome to my portfolio
-            </p>
-
-            <h1>
-                Hi, I'm
-                <span>
-                    Elisa Niyobuhungiro
-                </span>
-            </h1>
-
-            <h2 class="typing-text">
-                Web Developer
-            </h2>
-
-            <p class="hero-description">
-
-                I create modern websites, creative digital
-                experiences, and useful online solutions
-                while continuously improving my coding skills.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#projects"
-                    class="btn primary-btn"
-                >
-                    View My Work
-                </a>
-
-                <a
-                    href="#contact"
-                    class="btn secondary-btn"
-                >
-                    Contact Me
-                </a>
-
-            </div>
-
-            <div class="hero-status">
-
-                <span class="status-dot"></span>
-
-                <span>
-                    Available for projects
-                </span>
-
-            </div>
+            </nav>
 
         </div>
 
+    </header>
 
-        <div class="hero-image">
 
-            <div class="image-circle">
+    <!-- ================================
+         HOME
+    ================================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div>
+
+                <p class="welcome">
+                    Welcome to my portfolio
+                </p>
+
+                <h1>
+                    Hi, I'm
+                    <span>Elisa Niyobuhungiro</span>
+                </h1>
+
+                <div class="typing-text">
+                    Web Developer
+                </div>
+
+                <p class="hero-description">
+                    I build modern websites, creative digital experiences,
+                    and useful online solutions while learning and improving
+                    every day.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="#projects"
+                        class="btn primary-btn"
+                    >
+                        View My Work
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="btn secondary-btn"
+                    >
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
 
                 <img
                     src="https://i.ibb.co/tw7912Jg/elisa-profile-final-1.jpg"
-                    alt="Elisa Web Studio profile photo"
+                    alt="Elisa Web Studio"
+                    class="image-circle"
                 >
 
             </div>
 
-            <div class="floating-card card-one">
-                💻 Coding
-            </div>
-
-            <div class="floating-card card-two">
-                🚀 Learning
-            </div>
-
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <!-- ================================
+         ABOUT
+    ================================= -->
 
-<!-- =========================================
-     ABOUT
-========================================= -->
+    <section id="about" class="about">
 
-<section id="about" class="section">
+        <div class="container">
 
-    <div class="container">
+            <h2>About Me</h2>
 
-        <div class="section-heading">
-
-            <p class="section-label">
-                ABOUT ME
-            </p>
-
-            <h2>
-                Building My Digital Future
-            </h2>
-
-            <p>
-                I'm a young developer learning how to
-                turn ideas into useful digital products.
-            </p>
-
-        </div>
-
-
-        <div class="about-content">
-
-            <div class="about-text">
+            <div class="about-content">
 
                 <p>
-                    Welcome to Elisa Web Studio.
-                    I am passionate about website development,
-                    creative design, and learning new technologies.
+                    I'm Elisa, a young web developer and creative learner
+                    interested in building websites and digital projects.
+                    I enjoy turning ideas into simple, useful and modern
+                    web experiences.
                 </p>
 
-                <p>
-                    My goal is to build professional,
-                    user-friendly websites that help
-                    individuals and businesses create
-                    a strong online presence.
-                </p>
+                <div class="info-boxes">
 
-                <p>
-                    I am continuously learning HTML, CSS,
-                    JavaScript, web design, and other
-                    digital skills.
-                </p>
+                    <div class="info-box">
 
-            </div>
+                        <h3>Web Development</h3>
 
-
-            <div class="about-info">
-
-                <div class="info-box">
-
-                    <span class="info-icon">
-                        💻
-                    </span>
-
-                    <h3>
-                        Web Development
-                    </h3>
-
-                    <p>
-                        Creating responsive and modern websites.
-                    </p>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <span class="info-icon">
-                        🎨
-                    </span>
-
-                    <h3>
-                        Creative Design
-                    </h3>
-
-                    <p>
-                        Designing clean and attractive
-                        digital experiences.
-                    </p>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <span class="info-icon">
-                        📚
-                    </span>
-
-                    <h3>
-                        Continuous Learning
-                    </h3>
-
-                    <p>
-                        Improving my skills through
-                        practice and new projects.
-                    </p>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <span class="info-icon">
-                        🚀
-                    </span>
-
-                    <h3>
-                        Future Focused
-                    </h3>
-
-                    <p>
-                        Building skills and projects
-                        for future opportunities.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     SKILLS
-========================================= -->
-
-<section id="skills" class="section section-dark">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                MY SKILLS
-            </p>
-
-            <h2>
-                What I'm Learning
-            </h2>
-
-            <p>
-                These are some of the skills I am
-                developing through practice and projects.
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <!-- HTML -->
-
-            <div class="skill-card">
-
-                <div class="skill-title">
-
-                    <h3>
-                        HTML
-                    </h3>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div class="progress html-progress"></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CSS -->
-
-            <div class="skill-card">
-
-                <div class="skill-title">
-
-                    <h3>
-                        CSS
-                    </h3>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div class="progress css-progress"></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- JAVASCRIPT -->
-
-            <div class="skill-card">
-
-                <div class="skill-title">
-
-                    <h3>
-                        JavaScript
-                    </h3>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div class="progress js-progress"></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- VIDEO EDITING -->
-
-            <div class="skill-card">
-
-                <div class="skill-title">
-
-                    <h3>
-                        Video Editing
-                    </h3>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div class="progress video-progress"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     PROJECTS
-========================================= -->
-
-<section id="projects" class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                MY PROJECTS
-            </p>
-
-            <h2>
-                Things I've Built
-            </h2>
-
-            <p>
-                Here are some of my current web projects.
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <div class="project-card">
-
-                <div class="project-image project-one">
-
-                    <span>
-                        &lt;/&gt;
-                    </span>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <span class="project-number">
-                        PROJECT 01
-                    </span>
-
-                    <h3>
-                        Personal Portfolio
-                    </h3>
-
-                    <p>
-                        A professional portfolio website
-                        created to showcase my skills,
-                        services, projects, and contact
-                        information.
-                    </p>
-
-
-                    <div class="project-tags">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                        <p>
+                            Building responsive and modern websites.
+                        </p>
 
                     </div>
 
 
+                    <div class="info-box">
+
+                        <h3>Creative Design</h3>
+
+                        <p>
+                            Creating clean and attractive digital experiences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <h3>Learning</h3>
+
+                        <p>
+                            Improving my coding and creative skills every day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         SKILLS
+    ================================= -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2>My Skills</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <div class="skill-title">
+                        <h3>HTML</h3>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress html-progress"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-title">
+                        <h3>CSS</h3>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress css-progress"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-title">
+                        <h3>JavaScript</h3>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress js-progress"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-title">
+                        <h3>Video Editing</h3>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress video-progress"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         PROJECTS
+    ================================= -->
+
+    <section id="projects" class="projects">
+
+        <div class="container">
+
+            <h2>My Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        My personal portfolio website showcasing my skills,
+                        services and projects.
+                    </p>
+
                     <a
-                        href="#home"
+                        href="https://elisawebsdudio.github.io/elisa-portfolio/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="project-link"
                     >
                         View Portfolio →
@@ -540,393 +865,57 @@
 
                 </div>
 
-            </div>
 
+                <div class="project-card">
 
-
-            <div class="project-card">
-
-                <div class="project-image project-two">
-
-                    <span>
-                        🛒
-                    </span>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <span class="project-number">
-                        PROJECT 02
-                    </span>
-
-                    <h3>
-                        Product Marketplace
-                    </h3>
+                    <h3>Product Marketplace</h3>
 
                     <p>
-                        A marketplace website where users
-                        can explore products and create
-                        product listings.
+                        A marketplace website where users can explore
+                        products and post product listings.
                     </p>
-
-
-                    <div class="project-tags">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-
-                    </div>
-
 
                     <a
                         href="https://elisawebsdudio.github.io/marketplace-/"
-                        class="project-link marketplace-link"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="project-link"
                     >
                         🛒 View Marketplace →
                     </a>
 
                 </div>
 
-            </div>
 
+                <div class="project-card">
 
-
-            <div class="project-card">
-
-                <div class="project-image project-three">
-
-                    <span>
-                        🚀
-                    </span>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <span class="project-number">
-                        PROJECT 03
-                    </span>
-
-                    <h3>
-                        Coming Soon
-                    </h3>
+                    <h3>Coming Soon</h3>
 
                     <p>
-                        A new project is currently being
-                        planned and developed.
+                        More creative web projects are currently being
+                        developed.
                     </p>
 
-
-                    <div class="project-tags">
-
-                        <span>Future</span>
-                        <span>Learning</span>
-
-                    </div>
-
-
-                    <a
-                        href="#contact"
-                        class="project-link"
-                    >
-                        Stay Tuned →
-                    </a>
-
                 </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
+    <!-- ================================
+         SERVICES
+    ================================= -->
 
+    <section id="services">
 
-<!-- =========================================
-     SERVICES
-========================================= -->
+        <div class="container">
 
-<section id="services" class="section section-dark">
+            <h2>My Services</h2>
 
-    <div class="container">
+            <div class="services-grid">
 
-        <div class="section-heading">
-
-            <p class="section-label">
-                MY SERVICES
-            </p>
-
-            <h2>
-                What I Can Do
-            </h2>
-
-            <p>
-                Digital services I am developing
-                and offering through Elisa Web Studio.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    💻
-                </div>
-
-                <h3>
-                    Website Development
-                </h3>
-
-                <p>
-                    Building responsive websites
-                    using modern web technologies.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🎨
-                </div>
-
-                <h3>
-                    Website Design
-                </h3>
-
-                <p>
-                    Creating clean, attractive,
-                    and user-friendly website designs.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🎬
-                </div>
-
-                <h3>
-                    Creative Content
-                </h3>
-
-                <p>
-                    Exploring creative digital content
-                    and video editing.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="marketplace-service">
-
-            <a
-                href="https://elisawebsdudio.github.io/marketplace-/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="marketplace-button"
-            >
-                🛒 View My Marketplace
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     CONTACT
-========================================= -->
-
-<section id="contact" class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                CONTACT ME
-            </p>
-
-            <h2>
-                Let's Connect
-            </h2>
-
-            <p>
-                Have a project, idea, or question?
-                Feel free to contact me.
-            </p>
-
-        </div>
-
-
-        <div class="contact-content">
-
-
-            <div class="contact-info">
-
-
-                <div class="contact-item">
-
-                    <span>
-                        📧
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Email
-                        </strong>
-
-                        <p>
-                            elisawebstudio@gmail.com
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <span>
-                        📞
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Phone
-                        </strong>
-
-                        <p>
-                            +250 781651922
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <span>
-                        📍
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Location
-                        </strong>
-
-                        <p>
-                            Rwanda
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-buttons">
-
-                    <a
-                        href="tel:+250781651922"
-                        class="btn primary-btn"
-                    >
-                        📞 Call Me
-                    </a>
-
-
-                    <a
-                        href="mailto:elisawebstudio@gmail.com"
-                        class="btn secondary-btn"
-                    >
-                        📧 Send Email
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <form
-                class="contact-form"
-                id="contactForm"
-            >
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required
-                >
-
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required
-                >
-
-
-                <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Your Message"
-                    required
-                ></textarea>
-
-
-                <button
-                    type="submit"
-                    class="btn primary-btn"
-                >
-                    Send Message
-                </button>
-
-
-                <p
-                    id="formMessage"
-                    class="form-message"
-                ></p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer class="footer">
-    <p>© Elisa Web Studio — All Rights Reserved.</p>
-</footer>
+                <div class="service-card">
+                    
