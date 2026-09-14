@@ -1,14 +1,15 @@
-/* =====================================================
+/* =========================================
    ELISA WEB STUDIO
-   PORTFOLIO JAVASCRIPT
-===================================================== */
+   MAIN JAVASCRIPT
+========================================= */
 
 
-/* ================= MOBILE MENU ================= */
+/* =========================================
+   MOBILE MENU
+========================================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
-
 
 if (menuBtn && navLinks) {
 
@@ -16,39 +17,43 @@ if (menuBtn && navLinks) {
 
         navLinks.classList.toggle("active");
 
-        const isOpen =
-            navLinks.classList.contains("active");
+        if (navLinks.classList.contains("active")) {
 
-        menuBtn.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
+            menuBtn.textContent = "✕";
 
-        menuBtn.textContent =
-            isOpen ? "✕" : "☰";
+            menuBtn.setAttribute(
+                "aria-label",
+                "Close menu"
+            );
 
+        } else {
+
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+        }
     });
 
 
-    /* Close menu after clicking a link */
+    /* Close menu after selecting a link */
 
-    const navigationLinks =
-        navLinks.querySelectorAll("a");
+    const links = navLinks.querySelectorAll("a");
 
-
-    navigationLinks.forEach(function (link) {
+    links.forEach(function (link) {
 
         link.addEventListener("click", function () {
 
             navLinks.classList.remove("active");
 
-            menuBtn.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
             menuBtn.textContent = "☰";
 
+            menuBtn.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
         });
 
     });
@@ -56,19 +61,18 @@ if (menuBtn && navLinks) {
 }
 
 
-/* ================= TYPING ANIMATION ================= */
+/* =========================================
+   TYPING EFFECT
+========================================= */
 
-const typingText =
-    document.querySelector(".typing-text");
-
+const typingText = document.querySelector(".typing-text");
 
 if (typingText) {
 
     const words = [
         "Web Developer",
-        "Creative Designer",
-        "Website Builder",
-        "Digital Creator"
+        "Web Designer",
+        "Creative Developer"
     ];
 
     let wordIndex = 0;
@@ -78,9 +82,7 @@ if (typingText) {
 
     function typeEffect() {
 
-        const currentWord =
-            words[wordIndex];
-
+        const currentWord = words[wordIndex];
 
         if (!deleting) {
 
@@ -92,7 +94,6 @@ if (typingText) {
 
             letterIndex++;
 
-
             if (letterIndex === currentWord.length) {
 
                 deleting = true;
@@ -103,7 +104,6 @@ if (typingText) {
                 );
 
                 return;
-
             }
 
         } else {
@@ -116,24 +116,22 @@ if (typingText) {
 
             letterIndex--;
 
-
             if (letterIndex === 0) {
 
                 deleting = false;
 
-                wordIndex =
-                    (wordIndex + 1) % words.length;
+                wordIndex++;
 
+                if (wordIndex >= words.length) {
+                    wordIndex = 0;
+                }
             }
-
         }
-
 
         setTimeout(
             typeEffect,
             deleting ? 60 : 100
         );
-
     }
 
 
@@ -142,21 +140,9 @@ if (typingText) {
 }
 
 
-/* ================= CURRENT YEAR ================= */
-
-const yearElement =
-    document.getElementById("year");
-
-
-if (yearElement) {
-
-    yearElement.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* ================= CONTACT FORM ================= */
+/* =========================================
+   CONTACT FORM
+========================================= */
 
 const contactForm =
     document.getElementById("contactForm");
@@ -164,15 +150,13 @@ const contactForm =
 const formMessage =
     document.getElementById("formMessage");
 
-
-if (contactForm) {
+if (contactForm && formMessage) {
 
     contactForm.addEventListener(
         "submit",
         function (event) {
 
             event.preventDefault();
-
 
             const name =
                 document.getElementById("name").value.trim();
@@ -184,54 +168,24 @@ if (contactForm) {
                 document.getElementById("message").value.trim();
 
 
-            if (!name || !email || !message) {
-
-                if (formMessage) {
-
-                    formMessage.textContent =
-                        "Please fill in all fields.";
-
-                }
-
-                return;
-
-            }
-
-
-            const recipient =
-                "elisawebstudio@gmail.com";
-
-
-            const subject =
-                encodeURIComponent(
-                    "Website Contact from " + name
-                );
-
-
-            const body =
-                encodeURIComponent(
-                    "Hello Elisa Web Studio,\n\n" +
-                    "Name: " + name + "\n" +
-                    "Email: " + email + "\n\n" +
-                    "Message:\n" + message
-                );
-
-
-            if (formMessage) {
+            if (
+                name === "" ||
+                email === "" ||
+                message === ""
+            ) {
 
                 formMessage.textContent =
-                    "Opening your email app...";
+                    "Please fill in all fields.";
 
+                return;
             }
 
 
-            window.location.href =
-                "mailto:" +
-                recipient +
-                "?subject=" +
-                subject +
-                "&body=" +
-                body;
+            formMessage.textContent =
+                "Thank you! Your message has been received.";
+
+
+            contactForm.reset();
 
         }
     );
@@ -239,85 +193,71 @@ if (contactForm) {
 }
 
 
-/* ================= SCROLL ANIMATIONS ================= */
+/* =========================================
+   SCROLL REVEAL
+========================================= */
 
-const animatedElements =
+const revealElements =
     document.querySelectorAll(
-        ".skill-card, .project-card, .service-card, .info-box, .contact-item"
+        ".project-card, .service-card, .skill-card, .info-box"
     );
 
 
-animatedElements.forEach(function (element) {
+if (revealElements.length > 0) {
 
-    element.classList.add("scroll-hidden");
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
 
-});
+                entries.forEach(
+                    function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "show-element"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
 
 
-const observer =
-    new IntersectionObserver(
-        function (entries) {
+    revealElements.forEach(
+        function (element) {
 
-            entries.forEach(function (entry) {
+            element.classList.add(
+                "reveal-element"
+            );
 
-                if (entry.isIntersecting) {
+            revealObserver.observe(element);
 
-                    entry.target.classList.add(
-                        "scroll-show"
-                    );
-
-                    entry.target.classList.remove(
-                        "scroll-hidden"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
         }
     );
 
-
-animatedElements.forEach(function (element) {
-
-    observer.observe(element);
-
-});
+}
 
 
-/* ================= HEADER SHADOW ================= */
+/* =========================================
+   CURRENT YEAR
+========================================= */
 
-const header =
-    document.querySelector(".header");
+const yearElement =
+    document.getElementById("currentYear");
 
+if (yearElement) {
 
-window.addEventListener(
-    "scroll",
-    function () {
-
-        if (!header) {
-            return;
-        }
-
-
-        if (window.scrollY > 30) {
-
-            header.style.boxShadow =
-                "0 8px 30px rgba(0, 0, 0, 0.25)";
-
-        } else {
-
-            header.style.boxShadow =
-                "none";
+    yearElement.textContent =
+        new Date().getFullYear();
 
         }
-
-    }
-);
