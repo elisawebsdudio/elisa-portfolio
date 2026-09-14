@@ -952,4 +952,346 @@ nav a:hover::after {
         justify-content: center;
    
 
-                           
+                    /* =========================================
+   PROFESSIONAL PROJECTS
+========================================= */
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-heading > span {
+    display: inline-block;
+
+    color: #00ffaa;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #8fa0b3;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+    position: relative;
+
+    min-height: 360px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #0a1a2b;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(0, 255, 170, 0.35);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   TOP AREA
+========================================= */
+
+.project-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.project-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 255, 170, 0.08);
+
+    border: 1px solid rgba(0, 255, 170, 0.2);
+
+    border-radius: 12px;
+
+    color: #00ffaa;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+.project-number {
+    color: #526477;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+.project-content {
+    flex: 1;
+}
+
+.project-content h3 {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    margin-bottom: 13px;
+}
+
+.project-content p {
+    color: #8fa0b3;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   FEATURED PROJECT
+========================================= */
+
+.featured-project {
+    border-color: rgba(0, 255, 170, 0.22);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 255, 170, 0.07),
+            #0a1a2b 45%
+        );
+}
+
+.featured-label {
+    display: inline-block;
+
+    color: #00ffaa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================================
+   PROJECT TAGS
+========================================= */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.project-tags span {
+    padding: 5px 9px;
+
+    color: #aab7c5;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   PROJECT LINK
+========================================= */
+
+.project-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    color: #00ffaa;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.project-link span {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ffffff;
+}
+
+.project-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   COMING SOON
+========================================= */
+
+.coming-project {
+    opacity: 0.82;
+}
+
+.disabled-link {
+    color: #718296;
+
+    cursor: default;
+}
+
+.disabled-link:hover {
+    color: #718296;
+}
+
+.disabled-link:hover span {
+    transform: none;
+}
+
+
+/* =========================================
+   PROJECT MOBILE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .section-heading p {
+        font-size: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .project-card {
+        min-height: 320px;
+
+        padding: 25px;
+    }
+
+    .project-content h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .project-card {
+        padding: 22px;
+
+              
