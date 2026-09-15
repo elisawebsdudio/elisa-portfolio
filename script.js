@@ -1,6 +1,6 @@
 /* =========================================
    ELISA WEB STUDIO
-   MAIN JAVASCRIPT
+   PROFESSIONAL JAVASCRIPT
 ========================================= */
 
 
@@ -20,29 +20,23 @@ if (menuBtn && navLinks) {
         if (navLinks.classList.contains("active")) {
 
             menuBtn.textContent = "✕";
-
-            menuBtn.setAttribute(
-                "aria-label",
-                "Close menu"
-            );
+            menuBtn.setAttribute("aria-label", "Close menu");
 
         } else {
 
             menuBtn.textContent = "☰";
+            menuBtn.setAttribute("aria-label", "Open menu");
 
-            menuBtn.setAttribute(
-                "aria-label",
-                "Open menu"
-            );
         }
+
     });
 
 
     /* Close menu after selecting a link */
 
-    const links = navLinks.querySelectorAll("a");
+    const navItems = navLinks.querySelectorAll("a");
 
-    links.forEach(function (link) {
+    navItems.forEach(function (link) {
 
         link.addEventListener("click", function () {
 
@@ -50,10 +44,8 @@ if (menuBtn && navLinks) {
 
             menuBtn.textContent = "☰";
 
-            menuBtn.setAttribute(
-                "aria-label",
-                "Open menu"
-            );
+            menuBtn.setAttribute("aria-label", "Open menu");
+
         });
 
     });
@@ -76,7 +68,7 @@ if (typingText) {
     ];
 
     let wordIndex = 0;
-    let letterIndex = 0;
+    let characterIndex = 0;
     let deleting = false;
 
 
@@ -84,39 +76,34 @@ if (typingText) {
 
         const currentWord = words[wordIndex];
 
+
         if (!deleting) {
 
             typingText.textContent =
-                currentWord.substring(
-                    0,
-                    letterIndex + 1
-                );
+                currentWord.substring(0, characterIndex + 1);
 
-            letterIndex++;
+            characterIndex++;
 
-            if (letterIndex === currentWord.length) {
+
+            if (characterIndex === currentWord.length) {
 
                 deleting = true;
 
-                setTimeout(
-                    typeEffect,
-                    1500
-                );
+                setTimeout(typeEffect, 1500);
 
                 return;
+
             }
 
         } else {
 
             typingText.textContent =
-                currentWord.substring(
-                    0,
-                    letterIndex - 1
-                );
+                currentWord.substring(0, characterIndex - 1);
 
-            letterIndex--;
+            characterIndex--;
 
-            if (letterIndex === 0) {
+
+            if (characterIndex === 0) {
 
                 deleting = false;
 
@@ -125,13 +112,16 @@ if (typingText) {
                 if (wordIndex >= words.length) {
                     wordIndex = 0;
                 }
+
             }
+
         }
 
-        setTimeout(
-            typeEffect,
-            deleting ? 60 : 100
-        );
+
+        const speed = deleting ? 55 : 90;
+
+        setTimeout(typeEffect, speed);
+
     }
 
 
@@ -144,51 +134,31 @@ if (typingText) {
    CONTACT FORM
 ========================================= */
 
-const contactForm =
-    document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
 
-const formMessage =
-    document.getElementById("formMessage");
 
 if (contactForm && formMessage) {
 
-    contactForm.addEventListener(
-        "submit",
-        function (event) {
+    contactForm.addEventListener("submit", function (event) {
 
-            event.preventDefault();
-
-            const name =
-                document.getElementById("name").value.trim();
-
-            const email =
-                document.getElementById("email").value.trim();
-
-            const message =
-                document.getElementById("message").value.trim();
+        event.preventDefault();
 
 
-            if (
-                name === "" ||
-                email === "" ||
-                message === ""
-            ) {
-
-                formMessage.textContent =
-                    "Please fill in all fields.";
-
-                return;
-            }
+        formMessage.textContent =
+            "Thank you! Your message has been received.";
 
 
-            formMessage.textContent =
-                "Thank you! Your message has been received.";
+        contactForm.reset();
 
 
-            contactForm.reset();
+        setTimeout(function () {
 
-        }
-    );
+            formMessage.textContent = "";
+
+        }, 5000);
+
+    });
 
 }
 
@@ -197,53 +167,53 @@ if (contactForm && formMessage) {
    SCROLL REVEAL
 ========================================= */
 
-const revealElements =
-    document.querySelectorAll(
-        ".project-card, .service-card, .skill-card, .info-box"
-    );
+const revealElements = document.querySelectorAll(
+    ".section-heading, .about-content, .skill-card, .project-card, .service-card, .services-cta, .contact-content"
+);
 
 
-if (revealElements.length > 0) {
+if ("IntersectionObserver" in window) {
 
-    const revealObserver =
-        new IntersectionObserver(
-            function (entries) {
+    const observer = new IntersectionObserver(
 
-                entries.forEach(
-                    function (entry) {
+        function (entries) {
 
-                        if (entry.isIntersecting) {
+            entries.forEach(function (entry) {
 
-                            entry.target.classList.add(
-                                "show-element"
-                            );
+                if (entry.isIntersecting) {
 
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-                        }
+                    entry.target.classList.add("show-element");
 
-                    }
-                );
+                    observer.unobserve(entry.target);
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+                }
 
+            });
 
-    revealElements.forEach(
-        function (element) {
+        },
 
-            element.classList.add(
-                "reveal-element"
-            );
-
-            revealObserver.observe(element);
-
+        {
+            threshold: 0.12
         }
+
     );
+
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("reveal-element");
+
+        observer.observe(element);
+
+    });
+
+} else {
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("show-element");
+
+    });
 
 }
 
@@ -252,12 +222,11 @@ if (revealElements.length > 0) {
    CURRENT YEAR
 ========================================= */
 
-const yearElement =
-    document.getElementById("currentYear");
+const yearElement = document.querySelector("[data-year]");
 
 if (yearElement) {
 
     yearElement.textContent =
         new Date().getFullYear();
 
-        }
+}
