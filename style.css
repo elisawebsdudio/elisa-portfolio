@@ -314,38 +314,26 @@ textarea {
 
 
 /* =========================================
-   HERO IMAGE
+   HERO PROFILE IMAGE
 ========================================= */
 
-.hero-image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 390px;
-    margin: 0 auto;
-}
-
-
-.hero-image-glow {
-    position: absolute;
-    inset: 10%;
-    background: #00ffaa;
-    opacity: 0.14;
-    filter: blur(60px);
+.image-circle {
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    flex-shrink: 0;
 }
 
-
-.hero-image {
-    position: relative;
+.image-circle img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    border: 3px solid rgba(0, 255, 170, 0.65);
-    box-shadow:
-        0 0 0 12px rgba(0, 255, 170, 0.04),
-        0 0 60px rgba(0, 255, 170, 0.18);
 }
 
 
